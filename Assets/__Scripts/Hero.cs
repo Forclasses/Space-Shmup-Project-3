@@ -20,7 +20,7 @@ public class Hero : MonoBehaviour
     //public float shieldLevel = 1;
 
     [Tooltip( "This field holds a reference to the last triggering GameObject")]
-    private GameObject lastTriggerGo = null;
+    private GameObject lastTriggerGo = null; //new GameObject();
 
     void Awake()
     {
