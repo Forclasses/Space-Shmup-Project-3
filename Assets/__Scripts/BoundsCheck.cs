@@ -87,10 +87,10 @@ public class BoundsCheck : MonoBehaviour
     }
 
     public bool isOnScreen {
-        get{ return (screenLocs == eScreenLocs.onScreen);}
+        get { return (screenLocs == eScreenLocs.onScreen); }
     }
 
-    public bool LocIs( eScreenLocs checkLoc ){
+    public bool LocIs( eScreenLocs checkLoc ) {
         if ( checkLoc == eScreenLocs.onScreen) return isOnScreen;
         return ( ( screenLocs & checkLoc) == checkLoc);
     }
