@@ -59,7 +59,7 @@ public class Hero : MonoBehaviour
         GameObject go = rootT.gameObject;
         //Debug.Log("Shield trigger hit by " + go.gameObject.name);
 
-        if( go = lastTriggerGo ) return;
+        if( go == lastTriggerGo ) return;
         lastTriggerGo = go;
         Enemy enemy = go.GetComponent<Enemy>();
         if(enemy != null){
