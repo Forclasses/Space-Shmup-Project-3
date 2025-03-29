@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 
 // at this point I don't know why I keep including these the book has them.. so I add them just to be sure
@@ -14,6 +16,9 @@ public class Hero : MonoBehaviour
     public float speed = 30;
     public float rollMult = -45;
     public float pitchMult = 30;
+
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 40;
 
     [Header("Dynamic")] [Range(0,4)] [SerializeField]
     private float _shieldLevel = 1;
@@ -51,6 +56,20 @@ public class Hero : MonoBehaviour
         transform.position = pos;
 
         transform.rotation = Quaternion.Euler(vAxis*pitchMult,hAxis*rollMult,0);
+
+        if(Input.GetKeyDown( KeyCode.Space ) ) {
+
+            TempFire();
+
+
+        }
+    }
+
+    void TempFire() {
+        GameObject projGO = Instantiate<GameObject>( projectilePrefab );
+        projGO.transform.position = transform.position;
+        Rigidbody rigidB = projGO.GetComponent<Rigidbody>();
+        rigidB.linearVelocity =  Vector3.up * projectileSpeed;
     }
 
     void OnTriggerEnter(Collider other)
