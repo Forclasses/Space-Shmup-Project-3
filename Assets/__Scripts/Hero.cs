@@ -76,6 +76,7 @@ public class Hero : MonoBehaviour
             _shieldLevel = Mathf.Min( value, 4 );
             if(value < 0){
                 Destroy(this.gameObject);
+                Main.HERO_DIED();
             }
         }
     }
