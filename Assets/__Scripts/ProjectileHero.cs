@@ -6,10 +6,22 @@ using UnityEngine;
 public class ProjectileHero : MonoBehaviour
 {
     private BoundsCheck bndCheck;
+    private Renderer rend;
+    [Header("Dynamic")]
+    public Rigidbody rigid;
+    [SerializeField]
+    private eWeaponType _type;
+
+    public eWeaponType type {
+        get { return( _type ); }
+        set { SetType( value ); }
+    }
 
     void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
+        rend = GetComponent<Renderer>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     public Vector3 pos {
@@ -29,10 +41,35 @@ public class ProjectileHero : MonoBehaviour
             Destroy( gameObject );
         }
 
+
         if(pos.y > 40){
 
              Destroy( gameObject );
 
         }
+         if (pos.y < -40){
+            Destroy( gameObject );
+
+        }
+        if (pos.x < -20){
+            Destroy( gameObject );
+
+        }
+        if (pos.x > 20){
+            Destroy( gameObject );
+
+        }
+
+    }
+
+    public void SetType( eWeaponType eType){
+        _type = eType;
+        WeaponDefinition def = Main.GET_WEAPON_DEFINITION( _type );
+        rend.material.color = def.projectileColor;
+    }
+
+    public Vector3 vel {
+        get{ return rigid.linearVelocity;}
+        set{ rigid.linearVelocity = value; }
     }
 }
