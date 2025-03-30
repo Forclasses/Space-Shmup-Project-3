@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
         tempPos.y -= speed * Time.deltaTime;
         pos = tempPos;
     }
+    //am on pg 851
 
     void OnCollisionEnter(Collision coll)
     {
