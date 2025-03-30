@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
-
+[RequireComponent( typeof(BoundsCheck))]
 public class Enemy : MonoBehaviour
 {
 
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public float health = 10;
     public int score = 100;
 
-    private BoundsCheck bndCheck;
+    protected BoundsCheck bndCheck;
 
     void Awake()
     {
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         Move();
         //this is not wokring
 
-        if( bndCheck.LocIs( BoundsCheck.eScreenLocs.offDown )){
+       if( bndCheck.LocIs( BoundsCheck.eScreenLocs.offDown )){
 
             print("Is getting singal");
             Destroy( gameObject );
