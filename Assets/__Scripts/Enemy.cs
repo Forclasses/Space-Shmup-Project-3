@@ -36,10 +36,11 @@ public class Enemy : MonoBehaviour
     {
         Move();
         //this is not wokring
+        //At this point I can't tell if bndCheck is a thing or not.. am to afriad to touch it to check
 
        if( bndCheck.LocIs( BoundsCheck.eScreenLocs.offDown )){
 
-            print("Is getting singal");
+            //print("Is getting singal");
             Destroy( gameObject );
         }
         //this works well enough for now something is off with my bounds check and locis..
@@ -48,6 +49,20 @@ public class Enemy : MonoBehaviour
             Destroy( gameObject );
 
         }
+        if (pos.y > 50){
+            Destroy( gameObject );
+
+        }
+        if (pos.x < -20){
+            Destroy( gameObject );
+
+        }
+        if (pos.x > 20){
+            Destroy( gameObject );
+
+        }
+
+
     }
 
     public virtual void Move(){
