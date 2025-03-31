@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public float fireRate = 0.3f;
     public float health = 10;
     public int score = 100;
+    public float powerUpDropChance = 1f;
     protected bool calledShipDestoryed = false;
 
     protected BoundsCheck bndCheck;
