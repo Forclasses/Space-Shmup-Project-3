@@ -75,5 +75,9 @@ public class Main : MonoBehaviour
         return( new WeaponDefinition() );
     }
 
+    static public void SHIP_DESTORYED( Enemy e){
+        
+    }
+
 
 }

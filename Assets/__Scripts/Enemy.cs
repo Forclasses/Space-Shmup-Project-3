@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public float fireRate = 0.3f;
     public float health = 10;
     public int score = 100;
+    protected bool calledShipDestoryed = false;
 
     protected BoundsCheck bndCheck;
 
@@ -80,6 +81,10 @@ public class Enemy : MonoBehaviour
             if( bndCheck.isOnScreen ){
                 health -= Main.GET_WEAPON_DEFINITION( p.type ).damageOnHit;
                 if( health <= 0){
+                    if(!calledShipDestoryed){
+                        calledShipDestoryed = true;
+                        Main.SHIP_DESTORYED( this );
+                    }
                     Destroy(this.gameObject);
                 }
             }
