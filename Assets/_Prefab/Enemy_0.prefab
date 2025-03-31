@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c46e3983ffda44383c641e48e2bc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blinkColor: {r: 1, g: 0, b: 0, a: 1}
   showingColor: 0
   blinkCompleteTime: 0
 --- !u!1001 &8545356672719861936
