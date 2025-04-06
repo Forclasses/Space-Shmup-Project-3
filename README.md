@@ -1,1 +1,2 @@
-# Space-Shmup-Project-3
+# FinalProjectDriller
+Final Project for CS 382

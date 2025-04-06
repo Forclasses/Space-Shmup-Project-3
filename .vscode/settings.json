@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Space-Shmup-Project-3.sln"
+    "dotnet.defaultSolution": "Final Project Driller.sln"
 }
